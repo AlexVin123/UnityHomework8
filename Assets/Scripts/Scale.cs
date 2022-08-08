@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
-public class ScaleHeal : MonoBehaviour
+public class Scale : MonoBehaviour
 {
     [SerializeField] private Player _palyer;
     
