@@ -748,7 +748,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2023523429}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: Healing
+        m_MethodName: Heal
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1057,6 +1057,18 @@ PrefabInstance:
       propertyPath: _palyer
       value: 
       objectReference: {fileID: 2023523429}
+    - target: {fileID: 4795815732913856671, guid: e0e4d11d1fdcd854186ac20e23e7f432, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 2023523429}
+    - target: {fileID: 4795815732913856671, guid: e0e4d11d1fdcd854186ac20e23e7f432, type: 3}
+      propertyPath: _speedChangeSlider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6030236329100167235, guid: e0e4d11d1fdcd854186ac20e23e7f432, type: 3}
+      propertyPath: m_MaxValue
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 6030236329100167235, guid: e0e4d11d1fdcd854186ac20e23e7f432, type: 3}
       propertyPath: m_Transition
       value: 0
@@ -1128,6 +1140,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6763040869455086052, guid: f82e6e36f3084cd459e19c546f21b539, type: 3}
       propertyPath: _maxHeal
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763040869455086052, guid: f82e6e36f3084cd459e19c546f21b539, type: 3}
+      propertyPath: _maxHealth
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6763040869455086052, guid: f82e6e36f3084cd459e19c546f21b539, type: 3}

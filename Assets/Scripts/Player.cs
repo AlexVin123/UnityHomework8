@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         ChangedHealth?.Invoke();
     }
 
-    public void Healing(float countHeal)
+    public void Heal(float countHeal)
     {
         if (_health + countHeal > _maxHealth)
         {
