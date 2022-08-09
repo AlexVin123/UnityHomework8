@@ -18,29 +18,13 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (_health - damage < 0)
-        {
-            _health = 0;
-        }
-        else
-        {
-            _health -= damage;
-        }
-
+        _health = Mathf.Clamp(_health - damage, 0, _maxHealth);
         ChangedHealth?.Invoke();
     }
 
     public void Heal(float countHeal)
     {
-        if (_health + countHeal > _maxHealth)
-        {
-            _health = _maxHealth;
-        }
-        else
-        {
-            _health += countHeal;
-        }
-
+        _health = Mathf.Clamp(_health + countHeal, 0, _maxHealth);
         ChangedHealth?.Invoke();
     }
 }
