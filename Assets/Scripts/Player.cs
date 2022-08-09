@@ -3,45 +3,44 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _maxHeal;
-    [SerializeField] private UnityEvent _upHeal;
-    [SerializeField] private UnityEvent _domwHeal;
+    [SerializeField] private float _maxHealth;
 
-    private float _heal;
+    public UnityAction ChangedHealth;
+    private float _health;
 
-    public float Heal { get { return _heal; } private set { } }
-    public float MaxHeal { get { return _maxHeal; } private set { } }
+    public float Health { get => _health; }
+    public float MaxHealth { get => _maxHealth; }
 
     private void Start()
     {
-        _heal = _maxHeal;
+        _health = _maxHealth;
     }
 
     public void TakeDamage(float damage)
     {
-        if(_heal - damage < 0)
+        if (_health - damage < 0)
         {
-            _heal = 0;
+            _health = 0;
         }
         else
         {
-            _heal -= damage;
+            _health -= damage;
         }
 
-        _domwHeal.Invoke();
+        ChangedHealth?.Invoke();
     }
 
     public void Healing(float countHeal)
     {
-        if(_heal + countHeal > _maxHeal)
+        if (_health + countHeal > _maxHealth)
         {
-            _heal = _maxHeal;
+            _health = _maxHealth;
         }
         else
         {
-            _heal += countHeal;
+            _health += countHeal;
         }
 
-        _upHeal.Invoke();
+        ChangedHealth?.Invoke();
     }
 }
