@@ -5,8 +5,9 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float _maxHealth;
 
-    public UnityAction ChangedHealth;
     private float _health;
+
+    public UnityAction ChangedHealth;
 
     public float Health { get => _health; }
     public float MaxHealth { get => _maxHealth; }

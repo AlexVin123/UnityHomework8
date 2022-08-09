@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
-public class Dial : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Player _player;
     
@@ -14,15 +14,20 @@ public class Dial : MonoBehaviour
         _slider = GetComponent<Slider>();
         _slider.maxValue = _player.MaxHealth;
         _slider.value = _player.MaxHealth;
-        _player.ChangedHealth += StartChangeScale;
+        _player.ChangedHealth += OnChangedHealth;
     }
 
-    public void StartChangeScale()
+    private void OnDestroy()
     {
-        StartCoroutine(ChangeScale());
+        _player.ChangedHealth -= OnChangedHealth;
     }
 
-    private IEnumerator ChangeScale()
+    public void OnChangedHealth()
+    {
+        StartCoroutine(ChangeSliderValue());
+    }
+
+    private IEnumerator ChangeSliderValue()
     {
         while(Mathf.Round(_slider.value) != _player.Health)
         {
